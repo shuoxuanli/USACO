@@ -12,7 +12,7 @@ int find(int v) {
 }
 
 void merge(int u, int v) {
-	int fu = find(u);
+  int fu = find(u);
   int fv = find(v);
 
   if(fu != fv) {
@@ -25,26 +25,26 @@ int main() {
   ifstream cin("milkvisits.in");
   ofstream cout("milkvisits.out");
   
-	ios::sync_with_stdio(false);
+  ios::sync_with_stdio(false);
   cin.tie(0);
   
-	int n, m;
-	cin>>n>>m;
+  int n, m;
+  cin>>n>>m;
 	
   string s;
   cin>>s;
 
-	for(int i=1; i<=n; i++) {
-		f[i] = i;
-	}
-	
-	for(int i=1; i<=n-1; i++) {
-		int x, y;
-		cin>>x>>y;
+  for(int i=1; i<=n; i++) {
+    f[i] = i;
+  }
+
+  for(int i=1; i<=n-1; i++) {
+    int x, y;
+    cin>>x>>y;
     if(s[x-1] == s[y-1]) {
       merge(x, y);
     }
-	}
+  }
 	
   for(int i=1; i<=m; i++) {
     int a,b; char c;
@@ -54,7 +54,7 @@ int main() {
     } else {
       cout<<1;
     }
-	}
+  }
 	
   return 0;
 }
