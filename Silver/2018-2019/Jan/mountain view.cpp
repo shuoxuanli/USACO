@@ -30,25 +30,13 @@ int main() {
   map<int, int> ans; 
   for(int i = 0; i < n; i++) {
     if(i == idx) {
-      if(ans.count(mountain[i].org)) {
-        ans[mountain[i].org]++;
-      } else {
-        ans[mountain[i].org] = 1;
-      }
+      ans[mountain[i].org]++;
     }
     else if(mountain[i].x > r) {
-      if(ans.count(mountain[i].org)) {
-        ans[mountain[i].org]++;
-      } else {
-        ans[mountain[i].org] = 1;
-      }
+      ans[mountain[i].org]++;
     }
     else if(mountain[i].x <= r && mountain[i].y > abs(mountain[idx].x + mountain[idx].y - mountain[i].x)) {
-      if(ans.count(mountain[i].org)) {
-        ans[mountain[i].org]++;
-      } else {
-        ans[mountain[i].org] = 1;
-      }
+      ans[mountain[i].org]++;
     }
     if(mountain[i].x + mountain[i].y > r) {
       r = mountain[i].x + mountain[i].y;
@@ -61,25 +49,13 @@ int main() {
   idx = n-1;
   for(int i = n-1; i >= 0; i--) {
     if(i == idx) {
-      if(ans.count(mountain[i].org)) {
-        ans[mountain[i].org]++;
-      } else {
-        ans[mountain[i].org] = 1;
-      }
+      ans[mountain[i].org]++;
     }
     else if(mountain[i].x < l) {
-      if(ans.count(mountain[i].org)) {
-        ans[mountain[i].org]++;
-      } else {
-        ans[mountain[i].org] = 1;
-      }
+      ans[mountain[i].org]++;
     }
     else if(mountain[i].x >= l && mountain[i].y > abs(mountain[i].x - (mountain[idx].x - mountain[idx].y))) {
-      if(ans.count(mountain[i].org)) {
-        ans[mountain[i].org]++;
-      } else {
-        ans[mountain[i].org] = 1;
-      }
+      ans[mountain[i].org]++;
     }
     if(mountain[i].x - mountain[i].y < l) {
       l = mountain[i].x - mountain[i].y;
