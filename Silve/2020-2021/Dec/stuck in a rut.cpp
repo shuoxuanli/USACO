@@ -22,7 +22,6 @@ int N;
 vector<Cow> C_N;
 vector<Cow> C_E;
 
-//Custom sorting methods
 bool cmp(const Cow &o, const Cow &t){
 	if(o.coor.first == t.coor.first){
 		return o.coor.second < t.coor.second;
@@ -62,12 +61,10 @@ int main() {
 	fill(blame, blame+N, 0);
 	trav(c1, C_E){
 		trav(c2, C_N){
-			//Checks whether they intersect
 			if(!stopped[c1.id] && !stopped[c2.id] && c1.coor.second >= c2.coor.second && c1.coor.first <= c2.coor.first){
 				int xlen = c2.coor.first - c1.coor.first;
 				int ylen = c1.coor.second - c2.coor.second;
-
-				//checks which cow will block the other
+        
 				if(ylen < xlen){
 					stopped[c1.id] = true;
 					blame[c2.id] += 1 + blame[c1.id];
