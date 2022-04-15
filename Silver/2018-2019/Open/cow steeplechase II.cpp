@@ -9,12 +9,24 @@ struct Segment { Point p, q; int index; };
  
 bool operator< (Point p1, Point p2) { return p1.x==p2.x ? p1.y<p2.y : p1.x<p2.x; }
  
-int sign(LL x) { if (x==0) return 0; else return x<0 ? -1 : +1; }
-int operator* (Point p1, Point p2) { return sign(p1.x * p2.y - p1.y * p2.x); }
-Point operator- (Point p1, Point p2) { Point p = {p1.x-p2.x, p1.y-p2.y}; return p; }
+int sign(LL x) { 
+  if (x==0) return 0; 
+  else return x<0 ? -1 : +1; 
+}
+
+int operator* (Point p1, Point p2) { 
+  return sign(p1.x * p2.y - p1.y * p2.x); 
+}
+
+Point operator- (Point p1, Point p2) { 
+  Point p = {p1.x-p2.x, p1.y-p2.y}; 
+  return p; 
+}
+
 bool isect(Segment &s1, Segment &s2) {
   Point &p1 = s1.p, &q1 = s1.q, &p2 = s2.p, &q2 = s2.q;
-  return ((q2-p1)*(q1-p1)) * ((q1-p1)*(p2-p1)) >= 0 && ((q1-p2)*(q2-p2)) * ((q2-p2)*(p1-p2)) >= 0;
+  return ((q2-p1)*(q1-p1)) * ((q1-p1)*(p2-p1)) >= 0
+    && ((q1-p2)*(q2-p2)) * ((q2-p2)*(p1-p2)) >= 0;
 }
   
 double eval(Segment s) {
@@ -22,11 +34,17 @@ double eval(Segment s) {
   return s.p.y + (s.q.y-s.p.y) * (x-s.p.x) / (s.q.x-s.p.x);
 }
 
-bool operator< (Segment s1, Segment s2) { return s1.index != s2.index && eval(s1)<eval(s2); }
-bool operator== (Segment s1, Segment s2) { return s1.index == s2.index; }
+bool operator< (Segment s1, Segment s2) { 
+  return s1.index != s2.index && eval(s1)<eval(s2);
+}
+
+bool operator== (Segment s1, Segment s2) { 
+  return s1.index == s2.index; 
+}
  
 int main(void) {
   ifstream fin ("cowjump.in");
+  ofstream fout ("cowjump.out");
   vector<Segment> S;
   vector<Point> P;
  
@@ -56,8 +74,17 @@ int main(void) {
       active.erase(it);
     } else { 
       auto it = active.lower_bound(S[ans1]);
-      if (it != active.end() && isect(S[it->index], S[ans1])) { ans2 = it->index; break; }
-      if (it != active.begin()) { it--; if (isect(S[it->index], S[ans1])) { ans2 = it->index; break; } }
+      if (it != active.end() && isect(S[it->index], S[ans1])) { 
+        ans2 = it->index; 
+        break; 
+      }
+      if (it != active.begin()) { 
+        it--; 
+        if (isect(S[it->index], S[ans1])) { 
+          ans2 = it->index; 
+          break; 
+        } 
+      }
       active.insert(S[ans1]);
     }
   }
@@ -65,9 +92,9 @@ int main(void) {
   if (ans1 > ans2) swap (ans1, ans2);
   int ans2_count = 0;
   for (int i=0; i<N; i++)
-    if (S[i].index != ans2 && isect(S[i], S[ans2])) ans2_count++;
+    if (S[i].index != ans2 && isect(S[i], S[ans2])) 
+      ans2_count++;
   
-  ofstream fout ("cowjump.out");
   fout << (ans2_count > 1 ? ans2+1 : ans1+1) << "\n";
   return 0;
 }
