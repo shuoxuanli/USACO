@@ -37,6 +37,6 @@ int main() {
     int N; cin >> N;
     vector<i64> H(N);
     for (auto& i: H) cin >> i;
-      cout << solve(H) << "\n";
+    cout << solve(H) << "\n";
   }
 }
