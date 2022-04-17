@@ -7,12 +7,11 @@ import java.io.PrintWriter;
 import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		BufferedReader in = new BufferedReader(new FileReader("blist.in"));
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("blist.out")));
-		
-    int n = Integer.parseInt(in.readLine());
+  public static void main(String[] args) throws IOException {
+    BufferedReader in = new BufferedReader(new FileReader("blist.in"));
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("blist.out")));
 
+    int n = Integer.parseInt(in.readLine());
     int[] timeline = new int[1001];
 
     for(int i = 0; i < n; i++) {
@@ -32,7 +31,7 @@ public class Main {
     }
     
     out.println(max);
-		in.close();
-		out.close();
-	}
+    in.close();
+    out.close();
+  }
 }
