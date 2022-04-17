@@ -12,23 +12,25 @@ typedef vector<int> vi;
 #define pb push_back
  
 void setIO(string name) {
-	freopen((name+".in").c_str(),"r",stdin);
-	freopen((name+".out").c_str(),"w",stdout);
-	ios_base::sync_with_stdio(0);
+  freopen((name+".in").c_str(),"r",stdin);
+  freopen((name+".out").c_str(),"w",stdout);
+  ios_base::sync_with_stdio(0);
 }
 
 vi stor;
  
-bool ok(int x) { return x%3 && x%5; }
+bool ok(int x) {
+  return x%3 && x%5; 
+}
 
 int solve(int N) { 
-	int num = (N-1)/8;
-	return stor[N-8*num-1]+15*num;
+  int num = (N-1)/8;
+  return stor[N-8*num-1]+15*num;
 }
  
 int main() {
-	setIO("moobuzz");
-	FOR(i,1,16) if (ok(i)) stor.pb(i);
-	int N; cin >> N;
-	cout << solve(N) << "\n";
+  setIO("moobuzz");
+  FOR(i,1,16) if (ok(i)) stor.pb(i);
+  int N; cin >> N;
+  cout << solve(N) << "\n";
 }
