@@ -15,7 +15,6 @@ int main() {
     }
   }
 
-  // individual
   set<char> s1;
   for(int i = 0; i < 3; i++) {
     if(ttc[i][0] == ttc[i][1] && ttc[i][1] == ttc[i][2]) {
@@ -39,8 +38,6 @@ int main() {
 
   cout<<s1.size()<<endl;
 
-  
-  // team
   set<char> s;
   set<string> v;
   for(int i = 0; i < 3; i++) {
