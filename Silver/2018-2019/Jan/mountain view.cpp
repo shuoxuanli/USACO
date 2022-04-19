@@ -18,7 +18,6 @@ int main() {
   int n;
   cin>>n;
 
-
   for(int i = 0; i < n; i++) {
     cin>>mountain[i].x>>mountain[i].y;
     mountain[i].org = i;
@@ -43,7 +42,6 @@ int main() {
       idx = i;
     }
   } 
-
   
   int l = mountain[n-1].x - mountain[n-1].y;
   idx = n-1;
