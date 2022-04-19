@@ -12,7 +12,6 @@ bool cmp(cow a, cow b) {
 cow line[1001];
 
 int main() {
-
   freopen("socdist2.in", "r", stdin);
   freopen("socdist2.out", "w", stdout);
 
