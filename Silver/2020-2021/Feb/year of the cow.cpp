@@ -7,11 +7,11 @@ int main() {
   int n, k;
   cin >> n >> k;
   for (int i = 1; i <= n; i++) {
-      int year;
-      cin>>year;
-      year /= 12;
-      year++;
-      s.insert(year);
+    int year;
+    cin>>year;
+    year /= 12;
+    year++;
+    s.insert(year);
   }
 
   vector<int> diff;
