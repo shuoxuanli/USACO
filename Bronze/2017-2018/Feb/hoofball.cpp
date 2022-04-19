@@ -18,7 +18,6 @@ int getTarget(int i, int n) {
 }
 
 int main() {
-
   freopen("hoofball.in", "r", stdin);
   freopen("hoofball.out", "w", stdout);
 
