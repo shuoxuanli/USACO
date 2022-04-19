@@ -9,6 +9,7 @@ vector<int> s[11];
 int main() {
   freopen("bcs.in", "r", stdin);
   freopen("bcs.out", "w", stdout);
+	
   int k;
   cin >> n >> k;
   char c;
