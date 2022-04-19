@@ -5,7 +5,7 @@ int barn[1010][1010];
 
 int main() {
   freopen("paintbarn.in", "r", stdin);
-	freopen("paintbarn.out", "w", stdout);
+  freopen("paintbarn.out", "w", stdout);
 
   int n, k;
   cin>>n>>k;
