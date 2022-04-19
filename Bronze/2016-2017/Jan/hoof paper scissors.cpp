@@ -17,11 +17,9 @@ bool winner(int f, int s) {
 int game[101][2];
 
 int main() {
-
   freopen("hps.in", "r", stdin);
   freopen("hps.out", "w", stdout);
-
-
+  
   int n;
   cin>>n;
 
@@ -29,7 +27,6 @@ int main() {
     cin>>game[i][0]>>game[i][1];
   }
   
-  // rock paper scissor
   int cases[6][3] = {{1,2,3}, {1,3,2}, {2,1,3}, {2,3,1},{3,2,1},{3,1,2}};
 
   int ans = 0;
