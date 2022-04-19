@@ -30,7 +30,6 @@ void dfs(int t, int bt) {
 }
 
 int main() {
-
   freopen("snowboots.in", "r", stdin);
   freopen("snowboots.out", "w", stdout);
 
