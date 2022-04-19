@@ -5,7 +5,6 @@ string animals[101][101];
 int sk[101];
 
 int main() {
-
   freopen("guess.in", "r", stdin);
   freopen("guess.out", "w", stdout);
 
