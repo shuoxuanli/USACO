@@ -5,7 +5,6 @@ int drink[1001][3], sick[51][2], milk[60];
 bool dk[51];
 
 int main() {
-
   freopen("badmilk.in", "r", stdin);
   freopen("badmilk.out", "w", stdout);
 
