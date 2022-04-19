@@ -20,5 +20,5 @@ int main() {
   cout<<bs<<endl;
   cout<<sg<<endl;
   cout<<gp<<endl;
-
+  return 0;
 } 
