@@ -13,11 +13,9 @@ bool cmp(cow a, cow b) {
 }
 
 int main() {
-  
   freopen("notlast.in", "r", stdin);
   freopen("notlast.out", "w", stdout);
   
-
   int n;
   cin>>n;
 
