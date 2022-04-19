@@ -6,7 +6,7 @@ int diamonds[maxN], prefix[maxN], val[maxN];
 
 int main() {
   int n, k;
-  
+ 
   ofstream cout("diamond.out");
   ifstream cin("diamond.in");
 
