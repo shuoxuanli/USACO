@@ -28,7 +28,6 @@ void bfs(int y, int x) {
 }
 
 int main() {
-
   ifstream cin("gates.in");
   ofstream cout("gates.out");
   
