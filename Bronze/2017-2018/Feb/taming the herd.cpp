@@ -4,7 +4,6 @@ using namespace std;
 int logs[101], breakout[101];
 
 int main() {
-
   freopen("taming.in", "r", stdin);
   freopen("taming.out", "w", stdout);
 
