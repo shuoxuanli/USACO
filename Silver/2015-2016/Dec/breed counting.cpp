@@ -5,7 +5,6 @@ const int maxN =  1e5 + 1;
 int p1[maxN], p2[maxN], p3[maxN];
 
 int main() {
-
   freopen("bcount.in", "r", stdin);
   freopen("bcount.out", "w", stdout);
   
