@@ -45,6 +45,7 @@ bool canPlace(string name, int len) {
   }
   return true;
 }
+
 int main() {
   freopen("lineup.in", "r", stdin);
   freopen("lineup.out", "w", stdout);
