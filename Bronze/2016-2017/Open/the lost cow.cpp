@@ -12,7 +12,6 @@ int main() {
   int pre = x;
   int ans = 0;
 
-
   if(x == y) {
     cout<<0<<endl;
     return 0;
@@ -36,7 +35,6 @@ int main() {
      }
     ans -= abs(pos-y);
   }
-
 
   cout<<ans<<endl;
   return 0;
