@@ -4,7 +4,6 @@ using namespace std;
 int moveTo[101], finalOrder[101];
 
 int main() {
-
   freopen("shuffle.in", "r", stdin);
   freopen("shuffle.out", "w", stdout);
 
@@ -18,7 +17,6 @@ int main() {
   for(int i = 0; i < n; i++) {
     cin>>finalOrder[i+1];
   }
-
 
   for(int i = 1; i <= n; i++) {
     int current = i;
