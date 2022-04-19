@@ -62,7 +62,6 @@ int main() {
         }
       }
     }
-
     if(count!=0) {
       ans++;
     }
