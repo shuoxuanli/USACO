@@ -12,7 +12,6 @@ bool cmp (cows a, cows b){
 }
 
 int main() {
-
   freopen("cowqueue.in", "r", stdin);
   freopen("cowqueue.out", "w", stdout);
 
