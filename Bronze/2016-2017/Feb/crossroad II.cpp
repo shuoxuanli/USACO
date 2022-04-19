@@ -2,7 +2,6 @@
 using namespace std;
 
 int main() {
-
   freopen("circlecross.in", "r", stdin);
   freopen("circlecross.out", "w", stdout);
 
