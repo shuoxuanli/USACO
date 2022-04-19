@@ -4,7 +4,6 @@ using namespace std;
 long long prefix[50001];
 
 int main() {
-
   freopen("div7.in", "r", stdin);
   freopen("div7.out", "w", stdout);
 
