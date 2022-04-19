@@ -7,16 +7,16 @@ int t[maxN];
 
 bool check(int wait) {
   int bus = 1;
-	int pre = t[0];
-	int preI = 0;
-	for(int i=1;i< n;i++) {
-		if(t[i] - pre > wait || i + 1 - preI > c) {
-			bus++;
-			pre = t[i];
-			preI = i;
-		}
-	}
-	return bus <= m;
+  int pre = t[0];
+  int preI = 0;
+  for(int i=1;i< n;i++) {
+    if(t[i] - pre > wait || i + 1 - preI > c) {
+      bus++;
+      pre = t[i];
+      preI = i;
+    }
+  }
+  return bus <= m;
 }
 
 int main() {
