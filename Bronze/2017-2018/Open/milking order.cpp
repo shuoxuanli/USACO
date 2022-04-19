@@ -4,8 +4,7 @@ using namespace std;
 bool usedCow[100];
 bool usedPos[100];
 int pos[100];
- 
- 
+
 int nCows, M, nFixed;
  
 int ord[100];
