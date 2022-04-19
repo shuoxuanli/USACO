@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
 class Main {
   public static void main(String[] args) throws IOException{
     BufferedReader in = new BufferedReader(new FileReader("lifeguards.in"));
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("lifeguards.out")));
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("lifeguards.out")));
 
     int n = Integer.parseInt(in.readLine());
     int[] timeline =  new int[1000];
