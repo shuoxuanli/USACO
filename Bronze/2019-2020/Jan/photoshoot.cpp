@@ -4,7 +4,6 @@ using namespace std;
 int b[1001], a[1001];
 
 int main() {
-
   freopen("photo.in", "r", stdin);
   freopen("photo.out", "w", stdout);
   
