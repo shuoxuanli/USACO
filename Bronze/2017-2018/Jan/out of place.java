@@ -5,7 +5,7 @@ class Main {
 
   public static void main(String[] args) throws IOException{
     BufferedReader in = new BufferedReader(new FileReader("outofplace.in"));
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("outofplace.out")));
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("outofplace.out")));
 
     int n = Integer.parseInt(in.readLine());
     int[] h1 = new int[n];
