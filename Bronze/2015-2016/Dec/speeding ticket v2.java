@@ -4,7 +4,7 @@ import java.io.*;
 class Main {
   public static void main(String[] args) throws IOException{
     BufferedReader in = new BufferedReader(new FileReader("speeding.in"));
-		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("speeding.out")));
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("speeding.out")));
 
     StringTokenizer st = new StringTokenizer(in.readLine());
     int n = Integer.parseInt(st.nextToken());
