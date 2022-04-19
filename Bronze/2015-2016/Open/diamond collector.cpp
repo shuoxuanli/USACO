@@ -4,7 +4,6 @@ using namespace std;
 int diamonds[1001];
 
 int main() {
-
   freopen("diamond.in", "r", stdin);
   freopen("diamond.out", "w", stdout);
 
