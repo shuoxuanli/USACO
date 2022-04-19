@@ -7,7 +7,6 @@ int mp2[2001][2001];
 int p[10010];
 
 int main() {
-
   freopen("mowing.in", "r", stdin);
   freopen("mowing.out", "w", stdout);
 
