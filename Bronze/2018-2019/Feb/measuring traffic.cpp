@@ -5,7 +5,6 @@ int lr[101][2], curr[2], ans[2][2];
 string ramp[101];
 
 int main() {
-
   freopen("traffic.in", "r", stdin);
   freopen("traffic.out", "w", stdout);
 
