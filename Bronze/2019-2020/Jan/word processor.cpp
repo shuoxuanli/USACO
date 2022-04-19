@@ -2,7 +2,6 @@
 using namespace std;
 
 int main() {
-
   freopen("word.in", "r", stdin);
   freopen("word.out", "w", stdout); 
 
