@@ -75,8 +75,6 @@ int main() {
          break;
         }
       }
-
-
       if(match) {
         candidates[n0] = true;
         minK = min(minK, k);
