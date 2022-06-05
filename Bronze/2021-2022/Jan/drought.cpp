@@ -35,7 +35,7 @@ int main() {
 		else 
 			b &= d == 0;
 	
-		if(n&1^1) {
+		if((n&1)^1) {
 			ll mn = LLONG_MAX;
 			for(int i = 0; i < n; i += 2) 
 				mn = min(mn, diff[i]);
