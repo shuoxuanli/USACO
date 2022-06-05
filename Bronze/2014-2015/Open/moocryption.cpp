@@ -16,7 +16,7 @@ int main() {
 			cin>>puzzle[i][j];
 		}
 	}
-
+	
 	int cnt = 0;
 	for(int k = 0; k < 26; k++) { 
 		for(int l = 0; l < 26; l++) {
