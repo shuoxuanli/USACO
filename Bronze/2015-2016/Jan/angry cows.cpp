@@ -4,8 +4,7 @@ using namespace std;
 int hb[101];
 
 int blast(int start, int length, bool left) {
-  int src = start, dis = 1, dir = left ? -1 : 1;
-  
+  int src = start, dis = 1, dir = left ? -1 : 1; 
   while(src >= 0 && src < length) {
     int nxt = src;
     while(nxt + dir >= 0 && nxt + dir < length && abs(hb[src] - hb[nxt+dir]) <= dis) {
@@ -14,7 +13,6 @@ int blast(int start, int length, bool left) {
     if(src == nxt) {
       break;
     }
-
     src = nxt;
     dis++;
   }
