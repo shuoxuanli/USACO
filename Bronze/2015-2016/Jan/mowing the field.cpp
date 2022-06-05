@@ -17,7 +17,7 @@ int main() {
   bool found = false;
   int neg = 0, loc1 = 1000, loc2 = 1000;
   int minimum = INT_MAX, pre = 0, sum = 0;
-	int ans = INT_MAX;
+  int ans = INT_MAX;
   for(int i = 0; i < n; i++) {
     char d;
     int steps;
