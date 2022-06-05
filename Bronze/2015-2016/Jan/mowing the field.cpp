@@ -15,13 +15,9 @@ int main() {
 
 	mp[1000][1000] = 1;
 	bool found = false;
-	int neg = 0;
+	int neg = 0, loc1 = 1000, loc2 = 1000;
+	int minimum = INT_MAX, pre = 0, sum = 0;
 	int ans = INT_MAX;
-	int loc1 = 1000;
-	int loc2 = 1000;
-	int minimum = INT_MAX;
-	int pre = 0;
-	int sum = 0;
 	for(int i = 0; i < n; i++) {
 		char d;
 		int steps;
