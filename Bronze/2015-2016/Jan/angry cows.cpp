@@ -3,30 +3,22 @@ using namespace std;
 
 int hb[101];
 
-int getFarthestBlastIndex(int startIndex, int length, bool toLeft) {
-	int sourceBlastIndex = startIndex;
-	int direction;
-	int blastDistance = 1;
+int blast(int start, int length, bool left) {
+	int src = start, dis = 1, dir = left ? -1 : 1;
 
-	if(toLeft) {
-		direction = -1;
-	} else {
-		direction = 1;
-	}
-
-	while(sourceBlastIndex >= 0 && sourceBlastIndex < length) {
-		int nextBlastSource = sourceBlastIndex;
-		while(nextBlastSource + direction >= 0 && nextBlastSource + direction < length && abs(hb[sourceBlastIndex] - hb[nextBlastSource+direction]) <= blastDistance) {
-			nextBlastSource += direction;
+	while(src >= 0 && src < length) {
+		int nxt = src;
+		while(nxt + dir >= 0 && nxt + dir < length && abs(hb[src] - hb[nxt+dir]) <= dis) {
+			nxt += dir;
 		}
-		if(sourceBlastIndex == nextBlastSource) {
+		if(src == nxt) {
 			break;
 		}
 
-		sourceBlastIndex = nextBlastSource;
-		blastDistance++;
+		src = nxt;
+		dis++;
 	}
-	return sourceBlastIndex;
+	return src;
 }
 
 int main() {
@@ -44,8 +36,8 @@ int main() {
 
 	int ans = 0;
 	for(int i = 0; i < n; i++) {
-		int left = getFarthestBlastIndex(i, n, true);
-		int right = getFarthestBlastIndex(i, n, false);
+		int left = blast(i, n, true);
+		int right = blast(i, n, false);
 		int temp = right - left + 1;
 		ans = max(temp, ans);
 	}
