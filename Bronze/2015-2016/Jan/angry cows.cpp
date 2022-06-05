@@ -18,13 +18,13 @@ int getFarthestBlastIndex(int startIndex, int length, bool toLeft) {
 		int nextBlastSource = sourceBlastIndex;
 		while(nextBlastSource + direction >= 0 && nextBlastSource + direction < length && abs(hb[sourceBlastIndex] - hb[nextBlastSource+direction]) <= blastDistance) {
 			nextBlastSource += direction;
-	}
-	if(sourceBlastIndex == nextBlastSource) {
-		break;
-	}
+		}
+		if(sourceBlastIndex == nextBlastSource) {
+			break;
+		}
 
-	sourceBlastIndex = nextBlastSource;
-	blastDistance++;
+		sourceBlastIndex = nextBlastSource;
+		blastDistance++;
 	}
 	return sourceBlastIndex;
 }
