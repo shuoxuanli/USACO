@@ -1,61 +1,56 @@
-#include <cstdio>
-#include <vector>
-#include <utility>
-#include <algorithm>
 #include <bits/stdc++.h>
-
-#define PB push_back
-#define MP make_pair
-#define X first
-#define Y second
-
 using namespace std;
+
+#define pb push_back
+#define mp make_pair
+#define x first
+#define y second
 
 typedef long long ll;
 typedef pair<ll, ll> pll;
 
 int main() {
-	freopen("learning.in", "r", stdin);
-	freopen("learning.out", "w", stdout);
+  freopen("learning.in", "r", stdin);
+  freopen("learning.out", "w", stdout);
 
-	ll n, A, B;
-	cin>>n>>A>>B;
-	vector<pll> V;
-	for(ll i=0; i<n; i++) {
-		char buf[100];
-		ll w;
-		cin>>buf>>w;
-		V.PB(MP(w, buf[0]=='S' ? 1 : 0));
-	}
-	ll INF = ll(1000)*1000*1000*1000;
-	V.PB(MP(-INF, 0));
-	V.PB(MP(INF, 0));
-	sort(V.begin(), V.end());
+  ll n, a, b;
+  cin>>n>>a>>b;
+  vector<pll> v;
+  for(ll i=0; i<n; i++) {
+    char buf[100];
+    ll w;
+    cin>>buf>>w;
+    v.pb(mp(w, buf[0]=='S' ? 1 : 0));
+  }
+  ll INF = ll(1000)*1000*1000*1000;
+  v.pb(mp(-INF, 0));
+  v.pb(mp(INF, 0));
+  sort(v.begin(), v.end());
 
-	ll ans = 0;
-	for(ll i=0; i+1<V.size(); i++) {
-		ll S = V[i].X;
-		ll E = V[i+1].X;
-		ll M = (S+E)/2;
+  ll ans = 0;
+  for(ll i = 0; i < v.size()-1; i++) {
+    ll s = v[i].x;
+    ll e = v[i+1].x;
+    ll m = (s+e)/2;
 
-		if(V[i].Y==1) {
-			ll s = max(A, S+1);
-			ll e = min(B, M);
-			if(e >= s) {
-				ans += e-s+1;
-			}
-		}
-		if(V[i+1].Y==1) {
-			ll s = max(A, M+1);
-			ll e = min(B, E);
-			if(e >= s) {
-				ans += e-s+1;
-			}
-		}
-		if(V[i+1].Y==1 && V[i].Y==0 && (S%2)==(E%2) && A<=M && M<=B) {
-			ans++; 
-		}
-	}
-	cout<<ans<<endl;
-	return 0;
+    if(v[i].y==1) {
+      ll s2 = max(a, s+1);
+      ll e2 = min(b, m);
+      if(e2 >= s2) {
+        ans += e2-s2+1;
+      }
+    }
+    if(v[i+1].y==1) {
+      ll s2 = max(a, m+1);
+      ll e2 = min(b, e);
+      if(e2 >= s2) {
+        ans += e2-s2+1;
+      }
+    }
+    if(v[i+1].y==1 && v[i].y==0 && (s%2)==(e%2) && a<=m && m<=b) {
+      ans++;
+    }
+  }
+  cout<<ans<<endl;
+  return 0;
 }
