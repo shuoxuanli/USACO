@@ -41,7 +41,7 @@ class Main {
     public String next() {
       try {
         while (st == null || !st.hasMoreTokens())
-        st = new StringTokenizer(r.readLine());
+          st = new StringTokenizer(r.readLine());
         return st.nextToken();
       } catch (Exception e) { }
       return null;
