@@ -10,7 +10,7 @@ bool chk(int m) {
   ll need = 0;
   for(int i = 0; i < m; i++) {
     need += max(0, m-a[i]);
-	}
+  }
   return need <= (ll)k*(ll)l && m-a[m-1] <= k;
 }
 
