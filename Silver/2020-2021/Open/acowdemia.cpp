@@ -27,7 +27,7 @@ int main() {
     if(chk(m)) {
       lo = m+1;
       ans = m;
-      } else {
+    } else {
       hi = m-1;
     }
   }
