@@ -8,11 +8,10 @@ int check() {
   unordered_set<int> comb;
   for(int i = 0; i < n; i++) {
     comb.insert(m[i]);
-    for(int j = 0; j < n; j++) {
-      if(m[i] != m[j]) comb.insert(abs(m[i]-m[j]));
+    for(int j = i+1; j < n; j++) {
+      comb.insert(abs(m[i]-m[j]));
     }
   }
-
   for(int a : comb) {
     for(int b : comb) {
       for(int c : comb) {
@@ -32,10 +31,10 @@ int check() {
 
 int main() {
   cin>>t;
-
   while(t--) {
     cin>>n;
-    for(int i = 0; i < n; i++) cin>>m[i];
+    for(int i = 0; i < n; i++) 
+      cin>>m[i];
     cout<<check()<<endl;
   }
   return 0;
