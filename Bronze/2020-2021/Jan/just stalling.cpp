@@ -24,7 +24,6 @@ int main() {
       }
     }
     cnt[i] += count - i;
-    //cout<<cnt[i]<<endl;
   }
 
   long long ans = 1;
