@@ -53,6 +53,5 @@ int main() {
   for(int i = 1; i <= n; i++) {
     cout<<ans[find(i)].size()<<endl;
   }
-
   return 0;
 } 
