@@ -44,6 +44,5 @@ int main() {
     cin>>k>>v;
     cout<<bfs(k,v)<<endl;
   }
-
   return 0;
 }
