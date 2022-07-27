@@ -14,7 +14,6 @@ int main() {
     cin>>homework[i];
   }
 
-
   for(int i = 0; i <= n; i++) {
     m[i] = INT_MAX;
   }
@@ -23,13 +22,12 @@ int main() {
     suffix[i] = homework[i] + suffix[i+1];
     m[i] = min(homework[i], m[i+1]);
   }
-  
+
   double score = 0;
   for(int i = 1; i < n-1; i++) {
     double cur = (double)(suffix[i]-m[i])/(n-i-1);
     score = max(score, cur);
   }
-
 
   for(int i = 1; i < n-1; i++) {
     double cur = (double)(suffix[i]-m[i])/(n-i-1);
