@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int homework[100001], suffix[100001], m[100001];
 
 int main() {
@@ -38,6 +37,5 @@ int main() {
       cout<<i<<endl;
     }
   }
-
   return 0;
 } 
