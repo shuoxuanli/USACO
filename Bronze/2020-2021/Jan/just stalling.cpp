@@ -2,6 +2,7 @@
 using namespace std;
 
 long long cows[21], stalls[21], cnt[30];
+
 int main() {
   int n;
   cin>>n;
