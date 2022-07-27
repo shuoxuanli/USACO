@@ -22,6 +22,5 @@ int main() {
     auto lo = lower_bound(begin(bales), end(bales), a);
     cout<<hi-lo<<endl;
   }
-
   return 0;
 }
