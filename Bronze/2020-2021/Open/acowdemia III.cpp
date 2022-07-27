@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 char pastures[1002][1002]; 
 int cowTo[1002][1002]; 
 
