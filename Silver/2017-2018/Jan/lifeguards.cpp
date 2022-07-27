@@ -41,11 +41,11 @@ int main() {
   r = 0;
   for(int i = 0; i < n; i++) {
     int cur = min(wk[i + 1].x, wk[i].y) - max(wk[i].x, r);
-		res = min(res, cur);
-		r = max(r, wk[i].y);
-	}
+    res = min(res, cur);
+    r = max(r, wk[i].y);
+  }
 
-	res = max(res, 0); 
-	cout << tot - res << '\n';
+  res = max(res, 0); 
+  cout << tot - res << '\n';
   return 0;
 } 
