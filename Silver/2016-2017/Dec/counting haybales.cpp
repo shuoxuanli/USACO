@@ -67,6 +67,5 @@ int main() {
       cout<<prefix[end] - prefix[start]<<endl;;
     }
   }
-
   return 0;
 } 
