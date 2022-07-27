@@ -31,6 +31,5 @@ int main() {
     cout<<(solve(t) ? "YES":"NO")<<endl;
     sort(s, s + 4);
   }
-
   return 0;
 } 
