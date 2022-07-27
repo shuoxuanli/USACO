@@ -46,4 +46,5 @@ int main() {
   
     cout<<(b ? ans : -1)<<endl;
   }
+  return 0;
 }
