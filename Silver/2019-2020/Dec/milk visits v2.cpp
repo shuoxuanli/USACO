@@ -14,7 +14,7 @@ int find(int v) {
 void merge(int u, int v) {
   int fu = find(u);
   int fv = find(v);
-
+  
   if(fu != fv) {
     f[fv] = fu;
   }
@@ -30,14 +30,14 @@ int main() {
   
   int n, m;
   cin>>n>>m;
-	
+  
   string s;
   cin>>s;
-
+  
   for(int i=1; i<=n; i++) {
     f[i] = i;
   }
-
+  
   for(int i=1; i<=n-1; i++) {
     int x, y;
     cin>>x>>y;
@@ -45,7 +45,7 @@ int main() {
       merge(x, y);
     }
   }
-	
+  
   for(int i=1; i<=m; i++) {
     int a,b; char c;
     cin>>a>>b>>c;
@@ -55,6 +55,5 @@ int main() {
       cout<<1;
     }
   }
-	
   return 0;
 }
