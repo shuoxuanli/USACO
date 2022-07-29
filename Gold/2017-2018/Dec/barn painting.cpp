@@ -23,36 +23,23 @@ void addEdge(int u, int v) {
   head[u] = cnt;
 }
 
-LL dfs(int curid, int curc, int fa, int fac) {
-  if (curc == fac || (colr[curid] > 0 && curc != colr[curid])) { 
-    return 0;
+void dfs(int cur, int fa) {
+  if (colr[cur]) {
+    dp[cur][colr[cur]] = 1;
+  } else {
+    dp[cur][1] = dp[cur][2] = dp[cur][3] = 1;
   }
-
-  if (dp[curid][curc] > 0) {
-    return dp[curid][curc];
-  }
-
-  dp[curid][curc] = 1;
-  for (int i = head[curid]; i > 0; i = e[i].next) {
+  for (int i = head[cur]; i; i = e[i].next) {
     int v = e[i].to;
-    if (v == fa) {
-        continue;
-    }
-    LL num = 0;
-    for (int j = 1; j <= 3; j++) {
-      num += dfs(v, j, curid, curc);
-      num %= MOD;
-    }
-    dp[curid][curc] *= num;
-    dp[curid][curc] %= MOD;
+    if (v == fa) continue;
+    dfs(v, cur);
+    dp[cur][1] = dp[cur][1] * (dp[v][2] + dp[v][3]) % MOD;
+    dp[cur][2] = dp[cur][2] * (dp[v][1] + dp[v][3]) % MOD;
+    dp[cur][3] = dp[cur][3] * (dp[v][1] + dp[v][2]) % MOD;
   }
-  return dp[curid][curc];
 }
 
 int main() {
-  ios::sync_with_stdio(false);
-  cin.tie(0);
-
   ifstream cin("barnpainting.in");
   ofstream cout("barnpainting.out");
 
@@ -70,8 +57,11 @@ int main() {
     colr[id] = c;
   }
 
-  int ans = (dfs(1, 1, 0, 0) + dfs(1, 2, 0, 0)) % MOD;
-  ans = (ans + dfs(1, 3, 0, 0)) % MOD;
+  dfs(1, -1);
+  
+  int ans = 0;
+  for(int i = 1; i <= 3; i++) 
+    ans = (ans+dp[1][i]) % MOD;
   cout << ans << endl;
 
   return 0;
