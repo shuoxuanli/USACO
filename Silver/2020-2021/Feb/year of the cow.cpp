@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 set<int> s;
 int num[100010];
 
