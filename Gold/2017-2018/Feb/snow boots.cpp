@@ -42,7 +42,7 @@ int main() {
   freopen("snowboots.out", "w", stdout);
   cin>>n>>b;
   
-  for (int i = 1; i <= n; i++) {
+  for(int i = 1; i <= n; i++) {
     int x;
     cin>>x;
     tiles[i] = {x, i};
@@ -50,7 +50,7 @@ int main() {
     siz[i] = 1;
   }
   
-  for (int i = 1; i <= b; i++) {
+  for(int i = 1; i <= b; i++) {
     int s, d;
     cin>>s>>d;
     boots[i] = {s, d, i};
@@ -76,7 +76,7 @@ int main() {
     ans[boots[i].id] = (maxgap < boots[i].d);
   }
   
-  for (int i = 1; i <= b; i++) {
+  for(int i = 1; i <= b; i++) {
     cout << ans[i] << "\n";
   }
   return 0;
