@@ -84,6 +84,5 @@ int main() {
   for(int i=0; i<q; i++) {
     cout<<ans[i]<<endl;
   }
-  
   return 0;
 }
