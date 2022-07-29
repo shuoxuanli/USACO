@@ -29,17 +29,17 @@ int main() {
 
   for(int i = 1; i <= (n<<1); i++) {
     for(int j = i; j < min(i+n, (n<<1)+1); j++) {
-		  for(int l = i; l <= j; l++) {
-			  pre[i][j+1] += a[l]*(l-i);
-		  }
-	  }
+      for(int l = i; l <= j; l++) {
+        pre[i][j+1] += a[l]*(l-i);
+      }
+    }
   }
 
-	memset(dp, 0x3f, sizeof(dp));
+  memset(dp, 0x3f, sizeof(dp));
   for(int i = 1; i <= n; i++) {
-	  for(int j = i; j <= i+n; j++) {
-		  dp[i][j][1] = pre[i][j];
-	  }
+    for(int j = i; j <= i+n; j++) {
+      dp[i][j][1] = pre[i][j];
+    }
   }
 
   for(int i = 1; i <= n; i++) 
