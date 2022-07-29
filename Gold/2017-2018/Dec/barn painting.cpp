@@ -62,7 +62,7 @@ int main() {
   int ans = 0;
   for(int i = 1; i <= 3; i++) 
     ans = (ans+dp[1][i]) % MOD;
+  
   cout << ans << endl;
-
   return 0;
 }
