@@ -31,9 +31,9 @@ int dfs2(int u, int fa) {
 }
 
 int main() {
-	freopen("atlarge.in", "r", stdin);
+  freopen("atlarge.in", "r", stdin);
   freopen("atlarge.out", "w", stdout);
-
+  
   memset(leaf , 0x3f , sizeof(leaf));
   scanf("%d%d" , &n, &rt);
   for(int i = 0; i < n - 1 ; i++) {
