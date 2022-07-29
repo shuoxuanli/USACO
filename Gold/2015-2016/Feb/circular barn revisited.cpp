@@ -43,11 +43,11 @@ int main() {
   }
 
   for(int i = 1; i <= n; i++) 
-	  solve(i);
+    solve(i);
 	
   ll ans = LLONG_MAX;
   for(int i = 1; i <= n; i++)
-	  ans = min(ans, dp[i][i+n][k]);
+    ans = min(ans, dp[i][i+n][k]);
   cout<<ans<<endl;
   return 0;
 }
