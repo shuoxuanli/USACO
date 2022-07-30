@@ -27,28 +27,28 @@ void sort() {
 }
 
 int main() {
-	ifstream cin("timeline.in");
-	ofstream cout("timeline.out");
-
-	cin>>n>>m>>c;
-	for(int i = 1; i <= n; i++)
+  ifstream cin("timeline.in");
+  ofstream cout("timeline.out");
+  
+  cin>>n>>m>>c;
+  for(int i = 1; i <= n; i++)
     cin>>a[i];
-	for(int i = 0; i < c; i++) {
+  for(int i = 0; i < c; i++) {
     int u, v, x;
     cin>>u>>v>>x;
     deg[v]++;
     adj[u].push_back({v, x});
-	}
-
-	sort();
-
-	for(int i = 0; i < n; i++) {
+  }
+  
+  sort();
+  
+  for(int i = 0; i < n; i++) {
     for(auto &v : adj[ord[i]]) {
       a[v.first] = max(a[v.first], a[ord[i]]+v.second);
     }
-	}
-
-	for(int i = 1; i <= n; i++) 
+  }
+  
+  for(int i = 1; i <= n; i++) 
     cout<<a[i]<<endl;
-	return 0;
+  return 0;
 }
