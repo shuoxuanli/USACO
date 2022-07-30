@@ -30,7 +30,6 @@ ld dijkstra(int flow) {
       }
     }
   }
-  
   return (dis[n] == INF) ? 0 : (ld)flow/dis[n];
 }
 
@@ -53,6 +52,7 @@ int main() {
   for(int i = 0; i < flow.size(); i++) {
     res = max(res, dijkstra(flow[i]));
   }
+  
   ll ans = res*1e6;
   cout<<ans<<endl;
   return 0;
