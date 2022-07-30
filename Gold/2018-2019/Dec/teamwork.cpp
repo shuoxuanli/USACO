@@ -16,9 +16,8 @@ int main() {
   for(int i = 1; i <= n; i++) {
     int pre = 0;
     for(int j = 0; j < k; j++) {
-      int f = max(pre, s[i+j]);
-      team[i][j] = f*(j+1);
-      pre = f;
+      pre = max(pre, s[i+j]);
+      team[i][j] = pre*(j+1);
     }
   }
   
