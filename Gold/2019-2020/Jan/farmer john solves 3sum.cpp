@@ -40,4 +40,5 @@ int main() {
     cin>>a>>b;
     cout<<dp[a][b]<<endl;
   }
+  return 0;
 } 
