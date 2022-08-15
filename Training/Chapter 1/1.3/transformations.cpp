@@ -3,7 +3,6 @@ ID: Shuoxuan Li [shuoxua2]
 LANG: C++
 TASK: transform
 */
-
 #include<bits/stdc++.h>
 using namespace std;
 
