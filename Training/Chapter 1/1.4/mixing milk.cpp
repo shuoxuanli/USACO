@@ -3,7 +3,6 @@ ID: Shuoxuan Li [shuoxua2]
 LANG: C++
 TASK: milk
 */
-
 #include<bits/stdc++.h>
 using namespace std;
 
