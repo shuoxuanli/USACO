@@ -16,7 +16,6 @@ int main() {
         a[i][j] = c == '.';
       }
     }
-    
     memset(dp, 0, sizeof(dp));
     dp[1][1][0][0] = dp[1][1][0][1] = 1;
     for(int i = 1; i <= n; i++) {
@@ -32,7 +31,6 @@ int main() {
         }
       }
     }
-    
     int ans = 0;
     for(int i = 1; i <= k; i++)
         ans += dp[n][n][i][0] + dp[n][n][i][1];
