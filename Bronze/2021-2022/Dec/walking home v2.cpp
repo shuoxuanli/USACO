@@ -33,7 +33,7 @@ int main() {
     }
     int ans = 0;
     for(int i = 1; i <= k; i++)
-        ans += dp[n][n][i][0] + dp[n][n][i][1];
+      ans += dp[n][n][i][0] + dp[n][n][i][1];
     cout<<ans<<endl;
   }
   return 0;
