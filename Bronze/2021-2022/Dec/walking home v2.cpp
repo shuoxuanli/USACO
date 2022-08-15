@@ -1,8 +1,3 @@
-/*
- ID: shuoxua2
- PROG: maze1
- LANG: C++
-*/
 #include <bits/stdc++.h>
 using namespace std;
 
