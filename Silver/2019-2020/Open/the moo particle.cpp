@@ -15,7 +15,7 @@ int main() {
       cin>>a[i].first>>a[i].second;
    sort(a, a+n);
    for(int i = 0; i < n; i++) 
-      mn[i] = (i == 0? a[i].second : min(mn[i-1], a[i].second));
+      mn[i] = (i == 0 ? a[i].second : min(mn[i-1], a[i].second));
    for(int i = n-1; i >= 0; i--)
       mx[i] = (i == n-1 ? a[i].second : max(mx[i+1], a[i].second));
    int ans = 1;
