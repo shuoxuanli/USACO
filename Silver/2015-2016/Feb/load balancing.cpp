@@ -4,7 +4,7 @@ using namespace std;
 #define f first
 #define s second
 
-int main(void){
+int main(){
   ifstream cin("balancing.in");
   ofstream cout("balancing.out");
   int n;
@@ -21,19 +21,19 @@ int main(void){
     int ll = 0, lr = 0, ul = 0, ur = 0;
     for(int j = 0; j < n; j++){
       if(points[j].s > y){
-	ur++;
-      } else{
-	lr++;
+        ur++;
+      }else{
+        lr++;
       }
     }
     ans = min(ans, max(max(ll, lr), max(ul, ur)));
     for(int j = 0; j < n; j++){
       if(points[j].s > y){
-	ur--;
-	ul++;
-      } else if(points[j].s < y){
-	lr--;
-	ll++;
+        ur--;
+        ul++;
+      }else if(points[j].s < y){
+        lr--;
+        ll++;
       }
       ans = min(ans, max(max(ll, lr), max(ul, ur)));
     }
