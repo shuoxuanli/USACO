@@ -12,10 +12,9 @@ int n, f[maxN];
 pll a[maxN];
 
 struct edge {
-	int a, b;
-	ll w;
+  int a, b;
+  ll w;
 };
-
 vector<edge> g;
 
 void add(int u, int v) {
