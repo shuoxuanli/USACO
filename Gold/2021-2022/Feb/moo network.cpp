@@ -49,7 +49,7 @@ int main() {
   }
   
   iota(f+1, f+1+n, 1);
-  sort(g.begin(), g.end(), [] (const edge &a, const edge &b) {
+  sort(g.begin(), g.end(), [](const edge &a, const edge &b) {
     return a.w < b.w;
   });
   
