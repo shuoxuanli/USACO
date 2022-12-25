@@ -16,8 +16,7 @@ template <class T> struct dsu {
   bool join(int x, int y) {
     if ((x = find(x)) == (y = find(y)))
       return false;
-    if (rank[x] < rank[y])
-      swap(x, y);
+    if (rank[x] < rank[y]) swap(x, y);
     rank[x] += rank[y], f[y] = x;
     return true;
   }
