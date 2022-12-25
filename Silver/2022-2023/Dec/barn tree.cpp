@@ -10,19 +10,18 @@ vector<int> adj[200005];
 vector<pair<int, ll>> op[200005];
 
 void dfs(int u = 1, int p = -1) {
-  for (int v : adj[u])
-    if (v != p) {
-      dfs(v, u);
-      ans += a[v] != m;
-      a[u] += a[v] - m;
-      if (a[v] > m) {
-        deg[u]++;
-        op[v].push_back({u, a[v] - m});
-      } else if (a[v] < m) {
-        deg[v]++;
-        op[u].push_back({v, m - a[v]});
-      }
+  for (int v : adj[u]) if (v != p) {
+    dfs(v, u);
+    ans += a[v] != m;
+    a[u] += a[v] - m;
+    if (a[v] > m) {
+      deg[u]++;
+      op[v].push_back({u, a[v] - m});
+    } else if (a[v] < m) {
+      deg[v]++;
+      op[u].push_back({v, m - a[v]});
     }
+  }
 }
 
 int main() {
