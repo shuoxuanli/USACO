@@ -7,7 +7,7 @@ using namespace std;
 template <class T> struct dsu {
   vector<int> f;
   vector<T> rank;
-  dsu(int n) : f(n+1), rank(n+1, 1) { 
+  dsu(int n): f(n+1), rank(n+1, 1) { 
     iota(f.begin(), f.end(), 0); 
   }
   int find(int x) { 
