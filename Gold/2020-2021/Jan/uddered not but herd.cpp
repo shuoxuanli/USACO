@@ -32,6 +32,6 @@ int main() {
         sum += stor2[i>>bits][j];
         dp[i] = min(dp[i],sum);
       }
-	cout << dp[(1<<n)-1] << "\n";
+  cout << dp[(1<<n)-1] << "\n";
   return 0;
 }
