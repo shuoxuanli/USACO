@@ -23,8 +23,8 @@ int main() {
   int ans = 0;
   for (int i = 0; i < n; i++) {
     int lst = -1;
-    for (int j = i + 1; j < n; j++) {
-      if (j == i + 1 || cmp(i, j, lst)) {
+    for (int j = i+1; j < n; j++) {
+      if (j == i+1 || cmp(i, j, lst)) {
         ans++;
         lst = j;
         h[i].insert(j);
@@ -57,8 +57,8 @@ int main() {
     h[x].clear();
 
     int lst = -1;
-    for (int i = x + 1; i < n; i++) {
-      if (i == x + 1 || cmp(x, i, lst)) {
+    for (int i = x+1; i < n; i++) {
+      if (i == x+1 || cmp(x, i, lst)) {
         ans++;
         lst = i;
         h[x].insert(i);
