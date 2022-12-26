@@ -14,14 +14,14 @@ int main() {
 
   for (int i = 1; i < n; i++) {
     bool ok = true;
-    ans[i] = ans[i - 1] + a[i - 1][i];
+    ans[i] = ans[i-1] + a[i-1][i];
     int mx = ans[i], mn = ans[i];
-    for (int j = i - 1; j >= 0; j--) {
+    for (int j = i-1; j >= 0; j--) {
       mn = min(mn, ans[j]);
       mx = max(mx, ans[j]);
       ok &= mx - mn == a[j][i];
     }
-    if (!ok) ans[i] = ans[i - 1] - a[i - 1][i];
+    if (!ok) ans[i] = ans[i-1] - a[i-1][i];
   }
 
   for (int i = 0; i < n; i++) {
