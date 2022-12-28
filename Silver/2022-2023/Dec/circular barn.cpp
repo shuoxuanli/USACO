@@ -13,8 +13,7 @@ void solve() {
   int li = -1, ri = -1;
   int l = 1E9, r = 1E9;
   for (int i = 0; i < n; i++) {
-    int a;
-    cin >> a;
+    int a; cin >> a;
     if (a % 4 == 0) {
       if (cnt[a] < l) l = cnt[a], li = i;
     } else {
