@@ -80,7 +80,7 @@ int main() {
       a[i] = j;
     } else {
       int p = lca(i, j);
-      cout << (f.qry(in[p], in[i]) ^ f.qry(in[p], in[j]) ^ a[p]) << '\n';
+      cout << (f.qry(in[i]) ^ f.qry(in[j]) ^ a[p]) << '\n';
     }
   }
   return 0;
