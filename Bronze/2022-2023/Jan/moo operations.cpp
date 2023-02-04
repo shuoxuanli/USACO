@@ -13,7 +13,7 @@ int main() {
     cin >> s;
 
     int ans = INT_MAX;
-    for (int i = 1; i < sz(s) - 1; i++) if (s[i] == 'O') {
+    for (int i = 1; i < sz(s)-1; i++) if (s[i] == 'O') {
       ans = min(ans, sz(s) - 3 + (s[i-1] != 'M') + (s[i+1] != 'O'));
     }
 
