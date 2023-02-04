@@ -37,4 +37,5 @@ int main() {
   }
 
   cout << ans - 1 << '\n';
+  return 0;
 }
