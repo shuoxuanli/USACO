@@ -24,9 +24,9 @@ int main() {
       }
       cnt[i][j]++;
       if (s[i][j] == 'R') {
-        cnt[i][j + 1] += cnt[i][j];
+        cnt[i][j+1] += cnt[i][j];
       } else {
-        cnt[i + 1][j] += cnt[i][j];
+        cnt[i+1][j] += cnt[i][j];
       }
     }
   }
