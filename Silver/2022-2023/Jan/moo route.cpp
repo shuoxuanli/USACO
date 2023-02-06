@@ -16,7 +16,7 @@ int main() {
     if (p == 0) {
       cout << 'R';
       a[p++]--;
-    } else if (a[p] > a[p - 1]) {
+    } else if (a[p] > a[p-1]) {
       cout << 'R';
       a[p++]--;
     } else {
