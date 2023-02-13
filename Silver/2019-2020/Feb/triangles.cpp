@@ -1,54 +1,72 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-#define f first
-#define s second
+#define ll long long
+#define sz(x) (int)(x.size())
 
-const int MOD = 1e9+7; 
+const int MOD = 1E9 + 7;
+int n;
+ll sx[100005], sy[100005];
 
-struct mi {
-  int v; explicit operator int() const { return v; }
-  mi(ll _v) : v(_v%MOD) { v += (v<0)*MOD; }
-  mi() : mi(0) {}
-};
-mi operator+(mi a, mi b) { return mi(a.v+b.v); }
-mi operator-(mi a, mi b) { return mi(a.v-b.v); }
-mi operator*(mi a, mi b) { return mi((ll)a.v*b.v); }
- 
-int N;
-vector<pair<int,int>> v;
-vector<mi> sum[100005];
-vector<pair<int,int>> todo[20001];
- 
-void check() {
-  for (int i = 0; i <= 20000; ++i) if (todo[i].size() > 0) {
-    int sz = todo[i].size();
-    sort(begin(todo[i]),end(todo[i]));
-    mi cur = 0; 
-    for (int j = 0; j < sz; ++j) 
-      cur = cur+todo[i][j].f-todo[i][0].f;
-    for (int j = 0; j < sz; ++j) {
-      if (j) cur = cur+(2*j-sz)*(todo[i][j].f-todo[i][j-1].f);
-      sum[todo[i][j].s].push_back(cur);
-    }
-  }
-}
- 
+struct pt {
+	int x, y;
+} a[100005];
+
 int main() {
-  ifstream cin("triangles.in");
-  ofstream cout("triangles.out");
-  cin >> N; v.resize(N); 
-  for (int i = 0; i < N; ++i) cin >> v[i].f >> v[i].s;
-  for (int i = 0; i <= 20000; ++i) todo[i].clear();
-  for (int i = 0; i < N; ++i) 
-    todo[v[i].f+10000].push_back({v[i].s,i});
-  check();
-  for (int i = 0; i <= 20000; ++i) todo[i].clear();
-  for (int i = 0; i < N; ++i) 
-    todo[v[i].s+10000].push_back({v[i].f,i});
-  check();
-  mi ans = 0; 
-  for (int i = 0; i < N; ++i) ans = ans+sum[i][0]*sum[i][1];
-  cout << ans.v << "\n";
+	ifstream cin("triangles.in");
+	ofstream cout("triangles.out");
+
+	cin >> n;
+
+	map<pair<int, int>, int> mp;
+	for (int i = 1; i <= n; i++) {
+		cin >> a[i].x >> a[i].y;
+		mp[{a[i].x, a[i].y}] = i;
+	}
+
+	sort(a + 1, a + 1 + n, [](const pt &l, const pt &r) {
+		return l.x < r.x || (l.x == r.x && l.y < r.y);
+	});
+	for (int i = 1; i <= n; i++) {
+		int j = i;
+		ll sum = 0;
+		while (a[i].x == a[j].x) {
+			sum += a[j].y - a[i].y;
+			j++;
+		}
+		j--;
+		for (int k = i; k <= j; k++) {
+			sum += (k - i) * (a[k].y - a[k - 1].y);
+			sx[mp[{a[k].x, a[k].y}]] = sum;
+			sum -= (j - k) * (a[k + 1].y - a[k].y);
+		}
+		i = j;
+	}
+
+	sort(a + 1, a + 1 + n, [](const pt &l, const pt &r) {
+		return l.y < r.y || (l.y == r.y && l.x < r.x);
+	});
+	for (int i = 1; i <= n; i++) {
+		int j = i;
+		ll sum = 0;
+		while (a[i].y == a[j].y) {
+			sum += a[j].x - a[i].x;
+			j++;
+		}
+		j--;
+		for (int k = i; k <= j; k++) {
+			sum += (k - i) * (a[k].x - a[k - 1].x);
+			sy[mp[{a[k].x, a[k].y}]] = sum;
+			sum -= (j - k) * (a[k + 1].x - a[k].x);
+		}
+		i = j;
+	}
+
+	int ans = 0;
+	for (int i = 1; i <= n; i++) {
+		ans = (ans + 1LL * sx[i] * sy[i] % MOD) % MOD;
+	}
+
+	cout << ans << '\n';
+	return 0;
 }
