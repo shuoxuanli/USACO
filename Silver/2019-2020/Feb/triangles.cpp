@@ -66,7 +66,6 @@ int main() {
   for (int i = 1; i <= n; i++) {
     ans = (ans + 1LL * sx[i] * sy[i] % MOD) % MOD;
   }
-
   cout << ans << '\n';
   return 0;
 }
