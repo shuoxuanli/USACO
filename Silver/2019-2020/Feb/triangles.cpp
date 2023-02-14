@@ -9,7 +9,7 @@ int n;
 ll sx[100005], sy[100005];
 
 struct pt {
-  int x, y;
+  int x, y, ind;
 } a[100005];
 
 int main() {
@@ -17,11 +17,9 @@ int main() {
   ofstream cout("triangles.out");
 
   cin >> n;
-
-  map<pair<int, int>, int> mp;
   for (int i = 1; i <= n; i++) {
     cin >> a[i].x >> a[i].y;
-    mp[{a[i].x, a[i].y}] = i;
+    a[i].ind = i;
   }
 
   sort(a + 1, a + 1 + n, [](const pt &l, const pt &r) {
@@ -36,9 +34,9 @@ int main() {
     }
     j--;
     for (int k = i; k <= j; k++) {
-      sum += (k - i) * (a[k].y - a[k - 1].y);
-      sx[mp[{a[k].x, a[k].y}]] = sum;
-      sum -= (j - k) * (a[k + 1].y - a[k].y);
+      sum += (k - i) * (a[k].y - a[k-1].y);
+      sx[a[k].ind] = sum;
+      sum -= (j - k) * (a[k+1].y - a[k].y);
     }
     i = j;
   }
@@ -55,9 +53,9 @@ int main() {
     }
     j--;
     for (int k = i; k <= j; k++) {
-      sum += (k - i) * (a[k].x - a[k - 1].x);
-      sy[mp[{a[k].x, a[k].y}]] = sum;
-      sum -= (j - k) * (a[k + 1].x - a[k].x);
+      sum += (k - i) * (a[k].x - a[k-1].x);
+      sy[a[k].ind] = sum;
+      sum -= (j - k) * (a[k+1].x - a[k].x);
     }
     i = j;
   }
@@ -66,6 +64,7 @@ int main() {
   for (int i = 1; i <= n; i++) {
     ans = (ans + 1LL * sx[i] * sy[i] % MOD) % MOD;
   }
+
   cout << ans << '\n';
   return 0;
 }
