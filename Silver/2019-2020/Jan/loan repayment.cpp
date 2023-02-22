@@ -29,7 +29,7 @@ int main() {
 
   cin>>n>>k>>m;
 
-  ll ans  = 0, l = 1, r = n;
+  ll ans = 0, l = 1, r = n;
   while(l <= r) {
     ll mid = (l+r)/2;
     if(check(mid)) {
