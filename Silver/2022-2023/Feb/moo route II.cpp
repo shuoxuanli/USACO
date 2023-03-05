@@ -6,22 +6,23 @@ using namespace std;
 
 struct edge {
   int id, to, t1, t2;
+  bool operator<(const edge &o) const { 
+    return t1 < o.t1; 
+  }
 };
 
 int n, m;
-vector<edge> adj[200001];
+priority_queue<edge> adj[200001];
 int a[200001], ans[200001], cnt = 0;
 
 void dfs(int u, int t) {
   ans[u] = t;
   cnt += u == 1;
-  while (!adj[u].empty()) {
-    int w = (u == 1 && cnt == 1) ? 0 : a[u];
-    if (adj[u].back().t1 < t + w) break;
-    if (ans[adj[u].back().to] > adj[u].back().t2) {
-      dfs(adj[u].back().to, adj[u].back().t2);
-    }
-    adj[u].pop_back();
+  int w = (u == 1 && cnt == 1) ? 0 : a[u];
+  while (!adj[u].empty() && adj[u].top().t1 >= t + w) {
+    auto v = adj[u].top();
+    adj[u].pop();
+    if (ans[v.to] > v.t2) dfs(v.to, v.t2);
   }
 }
 
@@ -30,13 +31,10 @@ int main() {
   for (int i = 1; i <= m; i++) {
     int a, b, t1, t2;
     cin >> a >> t1 >> b >> t2;
-    adj[a].push_back({i, b, t1, t2});
+    adj[a].push({i, b, t1, t2});
   }
   for (int i = 1; i <= n; i++) {
     cin >> a[i];
-    sort(adj[i].begin(), adj[i].end(), [](const edge &a, const edge &b) {
-      return a.t1 < b.t1; 
-    });
   }
 
   memset(ans, 0x3f, sizeof(ans));
