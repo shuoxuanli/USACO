@@ -35,13 +35,13 @@ int main() {
   for (int i = 0, j = 0; i < m; i++) {
     while (j < n && a[j].t < b[i].t)
       j++;
-    if (a[j - 1].t < b[i].t) l[i] = j - 1;
+    if (a[j-1].t < b[i].t) l[i] = j - 1;
   }
   memset(r, -1, sizeof(r));
   for (int i = m - 1, j = n - 1; i >= 0; i--) {
     while (j >= 0 && a[j].t >= b[i].t)
       j--;
-    if (a[j + 1].t >= b[i].t) r[i] = j + 1;
+    if (a[j+1].t >= b[i].t) r[i] = j + 1;
   }
 
   int ans = m;
