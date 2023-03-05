@@ -26,8 +26,7 @@ void chk(int x, int y) {
       for (int j = 0; j < k; j++)
         ok &= (a[x+i][y+j] == '*' || b[i][j] == '.');
     }
-    if (!ok)
-      continue;
+    if (!ok) continue;
     for (int i = 0; i < k; i++) {
       for (int j = 0; j < k; j++)
         vis[x+i][y+j] |= (b[i][j] == '*');
