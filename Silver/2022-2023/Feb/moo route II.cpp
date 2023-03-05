@@ -17,8 +17,7 @@ void dfs(int u, int t) {
   cnt += u == 1;
   while (!adj[u].empty()) {
     int w = (u == 1 && cnt == 1) ? 0 : a[u];
-    if (adj[u].back().t1 < t + w)
-      break;
+    if (adj[u].back().t1 < t + w) break;
     if (ans[adj[u].back().to] > adj[u].back().t2) {
       dfs(adj[u].back().to, adj[u].back().t2);
     }
