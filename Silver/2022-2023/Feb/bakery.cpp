@@ -23,12 +23,9 @@ void solve() {
           nb |= a[i] <= b[i];
         }
       }
-      if (mid > m - 1)
-        nb = true, na = false;
-      if (x - mid > k - 1)
-        na = true, nb = false;
-      if (na == nb)
-        return !na;
+      if (mid > m - 1) nb = true, na = false;
+      if (x - mid > k - 1) na = true, nb = false;
+      if (na == nb) return !na;
       na ? (l = mid + 1) : (r = mid - 1);
     }
     return false;
