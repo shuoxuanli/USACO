@@ -25,4 +25,5 @@ int main() {
   ans += ed - st;
 
   cout << ans << '\n';
+  return 0;
 }
