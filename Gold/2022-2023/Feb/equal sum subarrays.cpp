@@ -45,7 +45,7 @@ int main() {
 
   s.clear();
   for (int i = n; i >= 1; i--) {
-    for (int j = i + 1; j <= n; j++)
+    for (int j = i+1; j <= n; j++)
       s.insert(sum[j] - sum[i]);
     for (int j = i; j >= 1; j--)
       upd(j, i, sum[i] - sum[j-1]);
