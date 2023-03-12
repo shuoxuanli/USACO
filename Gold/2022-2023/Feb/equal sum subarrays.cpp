@@ -32,28 +32,23 @@ int main() {
     if (hi2 != s.end()) ans[l][r] = min(ans[l][r], *hi2 + val);
     if (lo2 != s.begin()) ans[l][r] = min(ans[l][r], -val - *(--lo2));
 
-    for (ll x : tmp)
-      s.insert(x);
+    for (ll x : tmp) s.insert(x);
   };
 
   memset(ans, 0x7f, sizeof(ans));
   for (int i = 1; i <= n; i++) {
-    for (int j = i - 1; j >= 1; j--) {
+    for (int j = i - 1; j >= 1; j--)
       s.insert(sum[i - 1] - sum[j - 1]);
-    }
-    for (int j = i; j <= n; j++) {
+    for (int j = i; j <= n; j++)
       upd(i, j, sum[j] - sum[i - 1]);
-    }
   }
 
   s.clear();
   for (int i = n; i >= 1; i--) {
-    for (int j = i + 1; j <= n; j++) {
+    for (int j = i + 1; j <= n; j++)
       s.insert(sum[j] - sum[i]);
-    }
-    for (int j = i; j >= 1; j--) {
+    for (int j = i; j >= 1; j--)
       upd(j, i, sum[i] - sum[j - 1]);
-    }
   }
 
   for (int i = 1; i <= n; i++) {
