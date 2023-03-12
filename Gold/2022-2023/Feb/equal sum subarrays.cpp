@@ -11,7 +11,7 @@ int main() {
   cin >> n;
   for (int i = 1; i <= n; i++) {
     cin >> a[i];
-    sum[i] = sum[i - 1] + a[i];
+    sum[i] = sum[i-1] + a[i];
   }
 
   set<ll> s;
@@ -22,8 +22,8 @@ int main() {
     if (lo != s.begin()) ans[l][r] = min(ans[l][r], val - *(--lo));
 
     vector<ll> tmp;
-    if (r == n && s.count(sum[l - 1]))
-      s.erase(sum[l - 1]), tmp.push_back(sum[l - 1]);
+    if (r == n && s.count(sum[l-1]))
+      s.erase(sum[l-1]), tmp.push_back(sum[l-1]);
     if (l == 1 && s.count(sum[n] - sum[r]))
       s.erase(sum[n] - sum[r]), tmp.push_back(sum[n] - sum[r]);
 
@@ -37,10 +37,10 @@ int main() {
 
   memset(ans, 0x7f, sizeof(ans));
   for (int i = 1; i <= n; i++) {
-    for (int j = i - 1; j >= 1; j--)
-      s.insert(sum[i - 1] - sum[j - 1]);
+    for (int j = i-1; j >= 1; j--)
+      s.insert(sum[i-1] - sum[j-1]);
     for (int j = i; j <= n; j++)
-      upd(i, j, sum[j] - sum[i - 1]);
+      upd(i, j, sum[j] - sum[i-1]);
   }
 
   s.clear();
@@ -48,7 +48,7 @@ int main() {
     for (int j = i + 1; j <= n; j++)
       s.insert(sum[j] - sum[i]);
     for (int j = i; j >= 1; j--)
-      upd(j, i, sum[i] - sum[j - 1]);
+      upd(j, i, sum[i] - sum[j-1]);
   }
 
   for (int i = 1; i <= n; i++) {
