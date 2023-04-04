@@ -76,7 +76,6 @@ void solve() {
 
 int main() {
   cin >> t;
-  while (t--)
-    solve();
+  while (t--) solve();
   return 0;
 }
