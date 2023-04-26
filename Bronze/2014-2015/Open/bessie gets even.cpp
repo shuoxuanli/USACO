@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int num[256][2];
 
 bool is_even(int x) {
