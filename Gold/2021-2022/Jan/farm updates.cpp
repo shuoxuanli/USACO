@@ -32,8 +32,7 @@ int main() {
   }
 
   function<void(int, int)> dfs = [&](int u, int t) {
-    if (vis[u])
-      return;
+    if (vis[u]) return;
     ans[u] = t;
     vis[u] = true;
     for (int v : adj[u]) {
