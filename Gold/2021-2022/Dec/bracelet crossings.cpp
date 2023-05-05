@@ -21,6 +21,7 @@ void solve() {
     memset(mn, -1, sizeof(mn));
     for (int j = 1; j <= k; j++) {
       cin >> a[j];
+      cnt[a[j]]++;
       cov[a[j]][i] = true;
       mx[a[j]] = j;
       if (mn[a[j]] == -1) mn[a[j]] = j;
@@ -49,7 +50,6 @@ void solve() {
           cout << "NO\n";
           return;
         }
-        cnt[i]++;
       }
     }
   }
@@ -64,7 +64,7 @@ void solve() {
         cout << "NO\n";
         return;
       }
-      if (adj[i][j] && adj[i][j] / 2 != cnt[i]) {
+      if (adj[i][j] && adj[i][j] != cnt[i]) {
         cout << "NO\n";
         return;
       }
