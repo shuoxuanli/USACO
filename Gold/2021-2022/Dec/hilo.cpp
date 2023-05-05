@@ -37,8 +37,8 @@ int main() {
     while (!inc.empty() && inc.top() > p[i]) inc.pop();
     if (!dec.empty()) inc.push(dec.top()), dec.pop();
 
-    if (!dec.empty() && (inc.empty() || (inc.top() > dec.top() && !taken[dec.top()]))) {
-      ans++;
+    if (!dec.empty() && (inc.empty() || inc.top() > dec.top())) {
+      ans += !taken[dec.top()];
       taken[dec.top()] = true;
     }
 
