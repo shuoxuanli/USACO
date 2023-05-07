@@ -3,7 +3,7 @@ using namespace std;
 
 const int MAXN = 1e5 + 5;
 
-int n , m , rt , leaf[MAXN] , dep[MAXN];
+int n, m, rt, leaf[MAXN], dep[MAXN];
 vector<int> graph[MAXN];
 
 int dfs(int u, int fa) { 
