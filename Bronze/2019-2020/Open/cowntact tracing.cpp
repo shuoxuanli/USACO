@@ -6,7 +6,7 @@ struct handshake {
 };
 
 handshake hs[251];
-int states [101];
+int states[101];
 int n,t; 
 bool candidates[101];
 int minK = INT_MAX, maxK = INT_MIN;
@@ -75,6 +75,8 @@ int main() {
          break;
         }
       }
+
+
       if(match) {
         candidates[n0] = true;
         minK = min(minK, k);
