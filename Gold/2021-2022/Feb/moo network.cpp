@@ -37,9 +37,6 @@ int main() {
   
   vector<int> last(11, -1);
   for(int i = 1; i <= n; i++) {
-    if(i < n) {
-      add(i, i+1);
-    }
     for(int j = 0; j <= 10; j++) {
       if(last[j] != -1) {
         add(i, last[j]);
