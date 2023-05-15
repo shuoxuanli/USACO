@@ -33,8 +33,7 @@ int main() {
             vis[v] = true;
             cnt[c] = true;
             q.push(v);
-            if (psh)
-              p.push_back(c);
+            if (psh) p.push_back(c);
           } else if (!psh && !cnt[c]) {
             x = o ? v : u;
             y = c;
