@@ -11,7 +11,6 @@ bool v1[N], v2[N], c1[N], c2[N];
 
 int main() {
   cin >> n >> m;
-
   for (int i = 1; i <= n; i++) {
     int u, v;
     cin >> u >> v;
