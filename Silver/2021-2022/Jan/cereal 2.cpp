@@ -5,8 +5,7 @@ using namespace std;
 #define sz(x) (int)(x.size())
 
 const int N = 1E5 + 1;
-int n, m, edge[N];
-vector<int> node[N];
+int n, m;
 vector<array<int, 3>> adj[N];
 bool v1[N], v2[N], c1[N], c2[N];
 
