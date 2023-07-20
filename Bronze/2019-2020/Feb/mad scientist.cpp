@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -6,27 +6,17 @@ int main() {
   freopen("breedflip.out", "w", stdout);
 
   int n;
-  cin>>n;
+  cin >> n;
 
   string a, b;
-  cin>>a;
-  cin>>b;
+  cin >> a;
+  cin >> b;
 
-  bool diff[1001];
-  memset(diff, true, sizeof(diff));
-
-  int ans = 0, cnt = 0;
+  int ans = 0;
   for(int i = 0; i < n; i++) {
-    if(a[i] != b[i]) {
-      diff[i] = true;
-    }
-    else {diff[i] = false;}
-
-    if(i > 0){
-      if(diff[i] == false && diff[i-1] == true) {
-        ans++;
-      }
-    }
+    if(a[i] != b[i] && (i == n - 1 || a[i + 1] == b[i + 1]))
+      ans++;
   }
-  cout<<ans<<endl;
-} 
+  cout << ans << endl;
+  return 0;
+}
