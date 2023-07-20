@@ -1,35 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int x[101], y[101];
-
 int main() {
-  freopen("triangles.in", "r", stdin);
-  freopen("triangles.out", "w", stdout);
-  
+  freopen("breedflip.in", "r", stdin);
+  freopen("breedflip.out", "w", stdout);
+
   int n;
   cin>>n;
 
-  for(int i = 0; i < n; i++) {
-    cin>>x[i]>>y[i];
-  }
+  string a, b;
+  cin>>a;
+  cin>>b;
 
-  int result = 0;
+  bool diff[1001];
+  memset(diff, true, sizeof(diff));
+
+  int ans = 0, cnt = 0;
   for(int i = 0; i < n; i++) {
-    int maxX = 0, maxY = 0;
-    for(int j = 0; j < n; j++) {
-      if(i == j) {
-        continue;
-      }
-      if(x[i] == x[j]) {
-        maxY = max(maxY, abs(y[i]-y[j]));
-      }
-      if(y[i] == y[j]) {
-        maxX = max(maxX, abs(x[i]-x[j]));
+    if(a[i] != b[i]) {
+      diff[i] = true;
+    }
+    else {diff[i] = false;}
+
+    if(i > 0){
+      if(diff[i] == false && diff[i-1] == true) {
+        ans++;
       }
     }
-    result = max(result, maxX*maxY);
   }
-  cout<<result<<endl;
-  return 0;
+  cout<<ans<<endl;
 } 
