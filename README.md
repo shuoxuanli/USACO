@@ -1,1 +1,1 @@
-# USACO Bronze to Gold Solutions
+# USACO Bronze through Gold Solutions
