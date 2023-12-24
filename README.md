@@ -1,1 +1,1 @@
-Solutions to almost all USACO bronze through gold problems.
+Solutions to almost all USACO Bronze through Gold problems.
