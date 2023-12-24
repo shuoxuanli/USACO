@@ -1,2 +1,1 @@
-# Solutions to almost all USACO Bronze through Gold problems.
-$\log(n)$
+# USACO Bronze to Gold Solutions
