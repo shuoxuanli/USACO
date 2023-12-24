@@ -33,6 +33,16 @@ int main() {
         }
         x = 0;
         for (int i = 0; i < c; i++) {
+            if (abs(s[i] + j - 2) <= 1) {
+                int cur = cnt[i][j];
+                if (s[i] == 0 && has[x + s[i] + N]) {
+                    cur -= vis[x + s[i] + N] == 0;
+                }
+                if (s[i] + j - 2 == 0 && has[x + N]) {
+                    cur += vis[x + N] == 0;
+                }
+                ans = max(ans, cur);
+            }
             x += s[i];
             cnt[i + 1][j] = cnt[i][j];
             if (s[i] == 0 && has[x + j - 2 + N]) {
@@ -42,20 +52,6 @@ int main() {
             if (s[i] == 0 && has[x + N]) {
                 vis[x + N]++;
                 cnt[i + 1][j] += vis[x + N] == 1;
-            }
-            if (abs(s[i] + j - 2) <= 1) {
-                if (j - 2 == 0) {
-                    ans = max(ans, cnt[i][j]);
-                } else {
-                    int cur = cnt[i][j];
-                    if (s[i] == 0 && has[x + N]) {
-                        cur -= vis[x + N] == 1;
-                    }
-                    if (s[i] + j - 2 == 0 && has[x - s[i] + N]) {
-                        cur += vis[x - s[i] + N] == 0;
-                    }
-                    ans = max(ans, cur);
-                }
             }
         }
         memset(vis, 0, sizeof(vis));
