@@ -5,7 +5,7 @@ using namespace std;
 #define sz(x) (int)(x.size())
 
 const int N = 1E5 + 5;
-int t, c, s[N], cnt[N][5], vis[2 * N];
+int t, c, s[N], cnt[N], vis[2 * N];
 bool has[2 * N];
 
 int main() {
@@ -28,13 +28,13 @@ int main() {
             x += s[i];
             if (s[i] == 0 && has[x + N]) {
                 vis[x + N]++;
-                cnt[0][j] += vis[x + N] == 1;
+                cnt[0] += vis[x + N] == 1;
             }
         }
         x = 0;
         for (int i = 0; i < c; i++) {
             if (abs(s[i] + j - 2) <= 1) {
-                int cur = cnt[i][j];
+                int cur = cnt[i];
                 if (s[i] == 0 && has[x + s[i] + N]) {
                     cur -= vis[x + s[i] + N] == 0;
                 }
@@ -44,16 +44,17 @@ int main() {
                 ans = max(ans, cur);
             }
             x += s[i];
-            cnt[i + 1][j] = cnt[i][j];
+            cnt[i + 1] = cnt[i];
             if (s[i] == 0 && has[x + j - 2 + N]) {
-                cnt[i + 1][j] -= vis[x + j - 2 + N] == 1;
+                cnt[i + 1] -= vis[x + j - 2 + N] == 1;
                 vis[x + j - 2 + N]--;
             }
             if (s[i] == 0 && has[x + N]) {
                 vis[x + N]++;
-                cnt[i + 1][j] += vis[x + N] == 1;
+                cnt[i + 1] += vis[x + N] == 1;
             }
         }
+        memset(cnt, 0, sizeof(cnt));
         memset(vis, 0, sizeof(vis));
     }
 
