@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 #define sz(x) (int)(x.size())
 
-const int N = 1E6 + 1;
+const int N = 5E5 + 1;
 int n, k, a[N], b[N], pa[N], pb[N], cnt[N];
 
 int main() {
@@ -12,7 +12,6 @@ int main() {
     for (int i = 1; i <= k; i++) {
         cin >> a[i];
         pa[a[i]] = i;
-        a[i + k] = a[i];
     }
     for (int i = 1; i <= k; i++) {
         cin >> b[i];
@@ -28,22 +27,14 @@ int main() {
 
     int ans = 0;
     for (int t = 0; t < 2; t++) {
-        int cur = 0;
-        for (int i = 1, j = 0; i <= 2 * k; i++, j = j % k + 1) {
-            if (a[i] != b[j]) {
-                cnt[(i - j + k) % k] += cur;
-                cur = 0;
-                j = pb[a[i]];
-            }
-            cur += a[i] == b[j];
-            if (i == 2 * k) {
-                cnt[(i - j + k) % k] += cur;
+        for (int i = 1; i <= k; i++) {
+            if (pb[a[i]]) {
+                cnt[(i - pb[a[i]] + k) % k]++;
             }
         }
-        reverse(b + 1, b + 1 + k);
         for (int i = 1; i <= k; i++) {
-            pb[b[i]] = i;
-            ans = max(ans, cnt[i - 1] / 2);
+            pb[b[k - i + 1]] = i;
+            ans = max(ans, cnt[i - 1]);
             cnt[i - 1] = 0;
         }
     }
