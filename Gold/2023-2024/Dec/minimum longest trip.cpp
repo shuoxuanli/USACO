@@ -7,7 +7,6 @@ using namespace std;
 const int N = 2E5 + 5;
 int n, m, deg[N];
 vector<ll> ans[N];
-vector<vector<ll>> path[N];
 vector<pair<int, int>> adj[N];
 
 int main() {
